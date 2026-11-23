@@ -392,7 +392,7 @@ html:not(.js) .morph .said { display: none; } html:not(.js) .morph .sym { opacit
     <div class="tour-stage">
       <ol class="tour-ticks" aria-label="둘러보기 단계">
         <li><button data-go="0" aria-label="전체 화면"></button></li>
-        <li><button data-go="1" aria-label="정리"></button></li>
+        <li><button data-go="1" aria-label="녹음"></button></li>
         <li><button data-go="2" aria-label="필기"></button></li>
         <li><button data-go="3" aria-label="질문"></button></li>
         <li><button data-go="4" aria-label="다시 전체"></button></li>
@@ -404,10 +404,10 @@ html:not(.js) .morph .said { display: none; } html:not(.js) .morph .sym { opacit
             <div class="zoom">
               <img src="assets/hero.webp" alt="한 화면에 왼쪽 AI 창의 단계별 풀이, 가운데 슬라이드 위 AI 손글씨 필기, 위쪽 녹음 재생 막대와 오른쪽 쪽별 녹음 정리가 함께 보이는 Notrix 화면" width="1600" height="1112" fetchpriority="high">
               <div class="dim" aria-hidden="true"></div>
-              <i class="ring" aria-hidden="true"></i><i class="ring" aria-hidden="true"></i>
+              <i class="ring" aria-hidden="true"></i><i class="ring" aria-hidden="true"></i><i class="ring" aria-hidden="true"></i>
               <div class="marks">
                 <a class="mark m-ask" href="#features" data-go="3" style="left:12%;top:30%">질문</a>
-                <a class="mark m-listen" href="#features" data-go="1" style="left:88%;top:30%">정리</a>
+                <a class="mark m-listen" href="#features" data-go="1" style="left:88%;top:30%">녹음</a>
                 <a class="mark m-write" href="#features" data-go="2" style="left:50%;top:44%">필기</a>
               </div>
             </div>
@@ -420,9 +420,9 @@ html:not(.js) .morph .said { display: none; } html:not(.js) .morph .sym { opacit
         </div>
         <div class="tour-caps">
           <div class="cap cap-0 on"><b class="chip c-all">Notrix</b><h3>녹음, 필기, 질문이 한 화면에</h3><p>스크롤을 내리면서 하나씩 열어 볼게요.</p></div>
-          <div class="cap cap-1" style="--l:4%;--t:44%"><b class="chip c-listen">정리</b><h3>교수님 말씀이 쪽마다 정리돼요</h3><p>녹음하면 오른쪽에 쪽별 정리가 붙어요. 줄 앞의 시각을 누르면 그 대목부터 다시 들려줘요.</p></div>
+          <div class="cap cap-1" style="--l:4%;--t:40%"><b class="chip c-listen">녹음</b><h3>교수님 말씀이 슬라이드마다 정리돼요</h3><p>녹음만 켜 두면 슬라이드별로 교수님 설명이 정리되고, 중요한 대목은 AI가 자료 위에 손필기까지 해 줘요. 시각을 누르면 그 대목부터 다시 들려줘요.</p></div>
           <div class="cap cap-2" style="--l:58%;--t:54%"><b class="chip c-write">필기</b><h3>AI가 자료 위에 직접 필기해요</h3><p>보라색 손글씨는 전부 AI가 썼어요. 지수·아래첨자까지 수식 그대로 적어요.</p></div>
-          <div class="cap cap-3" style="--l:58%;--t:16%"><b class="chip c-ask">질문</b><h3>모르는 곳은 둘러서 바로 질문</h3><p>올가미로 고르면 왼쪽에 단계별 풀이가 와요. 답이 좋으면 '필기 추가'로 자료 위에 옮겨 적어요.</p></div>
+          <div class="cap cap-3" style="--l:58%;--t:16%"><b class="chip c-ask">질문</b><h3>모르는 곳은 AI에게 바로 질문</h3><p>오른쪽 위 AI 탭을 열거나 헷갈리는 곳을 올가미로 두르면, 왼쪽에 단계별 풀이가 와요. 답이 좋으면 '필기 추가'로 자료 위에 옮겨 적어요.</p></div>
           <div class="cap cap-4" style="--l:50%;--t:70%"><b class="chip c-all">한 화면</b><h3>자료 한 장 위에서 다 해결돼요</h3><p>실제 앱 화면이에요. 손글씨 메모와 정리, 왼쪽 답은 모두 AI가 적었어요.</p></div>
         </div>
       </div>
@@ -438,7 +438,7 @@ html:not(.js) .morph .said { display: none; } html:not(.js) .morph .sym { opacit
     </div>
     <div class="player reveal">
       <div class="player-tabs" role="tablist" aria-label="기능 영상">
-        <button class="t-listen on" role="tab" aria-selected="true">정리<i></i></button>
+        <button class="t-listen on" role="tab" aria-selected="true">녹음<i></i></button>
         <button class="t-write" role="tab" aria-selected="false">필기<i></i></button>
         <button class="t-ask" role="tab" aria-selected="false">질문<i></i></button>
       </div>
@@ -448,7 +448,7 @@ html:not(.js) .morph .said { display: none; } html:not(.js) .morph .sym { opacit
         <video src="assets/ask.mp4" poster="assets/ask-poster.webp" width="1200" height="900" muted playsinline preload="none" aria-label="예제 수식을 올가미로 둘러 AI에게 보내자 왼쪽 AI 창에 풀이 설명이 나오는 화면"></video>
       </div>
       <div class="player-caps">
-        <p class="on">정리된 줄 앞의 시각을 누르면 그 대목부터 다시 들려줘요.</p>
+        <p class="on">녹음하면 슬라이드마다 교수님 말씀이 정리돼요. 시각을 누르면 그 대목부터 다시 들려줘요.</p>
         <p>AI 답 아래 '필기 추가'를 누르면 자료 빈자리에 손글씨로 적어요.</p>
         <p>헷갈리는 수식을 올가미로 둘러 보내면 왼쪽에 풀이가 바로 와요.</p>
       </div>
@@ -598,9 +598,9 @@ html:not(.js) .morph .said { display: none; } html:not(.js) .morph .sym { opacit
   // 한 화면 둘러보기: 화면은 그대로, 스크롤마다 한 곳씩 밝혀요 (좌표는 hero.webp 기준 %)
   var STEPS = [
     { full: true, splash: true },
-    { holes: [[76.3, 17.3, 99.6, 94], [46.8, 19, 76, 29]], origin: '100% 50%', scale: 1.08 },
-    { holes: [[25.6, 18.5, 75.8, 46.5], [25.8, 83.5, 46.5, 90.5]], origin: '50% 30%', scale: 1.1 },
-    { holes: [[0.5, 10.5, 23.6, 99.5], [29, 54.5, 60.5, 82.5]], origin: '0% 55%', scale: 1.08 },
+    { holes: [[76.3, 17.3, 99.6, 94], [46.8, 19, 76, 29], [96.5, 6.5, 96.5, 6.5]], origin: '100% 50%', scale: 1.08 },
+    { holes: [[25.6, 18.5, 75.8, 46.5], [25.8, 83.5, 46.5, 90.5], [96.5, 6.5, 96.5, 6.5]], origin: '50% 30%', scale: 1.1 },
+    { holes: [[0.5, 10.5, 23.6, 99.5], [29, 54.5, 60.5, 90], [93.9, 3.6, 99.3, 9.6]], origin: '50% 50%', scale: 1 },
     { full: true }
   ];
   var track = document.querySelector('.tour-track');
@@ -631,7 +631,7 @@ html:not(.js) .morph .said { display: none; } html:not(.js) .morph .sym { opacit
       var h = holes[k];
       r.style.left = h[0] + '%'; r.style.top = h[1] + '%';
       r.style.width = (h[2] - h[0]) + '%'; r.style.height = (h[3] - h[1]) + '%';
-      r.style.opacity = st.full ? 0 : 1;
+      r.style.opacity = (st.full || h[2] - h[0] < 0.5) ? 0 : 1;
     });
     zoom.style.transformOrigin = st.origin || '50% 50%';
     zoom.style.transform = st.full ? 'scale(1)' : 'scale(' + st.scale + ')';
@@ -673,7 +673,7 @@ html:not(.js) .morph .said { display: none; } html:not(.js) .morph .sym { opacit
   window.addEventListener('resize', onScroll);
   onScroll();
 
-  // 움직이는 화면: 큰 화면 하나에서 정리 → 필기 → 질문 순서로 이어서 재생
+  // 움직이는 화면: 큰 화면 하나에서 녹음 → 필기 → 질문 순서로 이어서 재생
   var player = document.querySelector('.player');
   if (player) {
     var pv = [].slice.call(player.querySelectorAll('video'));
