@@ -6,7 +6,7 @@
 <title>Notrix — 녹음, 필기, AI 질문을 한 곳에서</title>
 <meta name="description" content="녹음 앱, 필기 앱, AI 챗봇을 오가던 수업을 한 곳에서. 녹음은 자료 옆에 정리되고, AI가 자료 위에 직접 필기하고, 내 풀이를 보고 바로 답해 주는 iPad 필기 앱 Notrix.">
 <meta property="og:title" content="Notrix — 녹음, 필기, AI 질문을 한 곳에서">
-<meta property="og:description" content="녹음 정리, 자료에 직접 필기, 내 풀이 보고 질문까지 한 앱에서. 지금 베타 테스터를 모집해요.">
+<meta property="og:description" content="녹음 정리, 자료에 직접 필기, 내 풀이 보고 질문까지 한 앱에서. 지금 iPad 베타를 바로 써 볼 수 있어요.">
 <meta property="og:image" content="assets/hero.webp">
 <meta name="theme-color" content="#ffffff">
 <link rel="icon" href="assets/icon.png">
@@ -325,6 +325,10 @@ a.mark { text-decoration: none; cursor: pointer; }
   .player { width: 100%; min-width: 0; }
   .player-screen { padding: 8px; border-radius: 22px; }
   .player-screen video { border-radius: 14px; }
+}
+/* 휴대폰: 영상은 확대한 정사각형 판으로 */
+@media (max-width: 720px) {
+  .player-screen video { aspect-ratio: 1 / 1; }
   .player-caps p { font-size: 15px; }
 }
 
@@ -371,7 +375,7 @@ html:not(.js) .morph .said { display: none; } html:not(.js) .morph .sym { opacit
       <a href="#features">기능</a>
       <a href="#goodnotes">굿노트에서 옮기기</a>
       <a href="#faq">자주 묻는 질문</a>
-      <a class="btn btn-primary btn-sm" href="https://docs.google.com/forms/d/e/1FAIpQLSdGS65AqrO1bzIP7G3z0LZImt3jTiNz00R73fTh0tbR4eeIiA/viewform" target="_blank" rel="noopener">베타 신청</a>
+      <a class="btn btn-primary btn-sm" href="https://testflight.apple.com/join/JvUp5sWQ" target="_blank" rel="noopener">베타 참여</a>
     </div>
   </div>
 </nav>
@@ -382,7 +386,7 @@ html:not(.js) .morph .said { display: none; } html:not(.js) .morph .sym { opacit
     <p class="subhead">공대생을 위한 AI 노트, <span class="grad">Notrix</span></p>
     <p class="lead">녹음 앱 켜고, 필기 앱에 쓰고, 막히면 캡처해서 챗봇에 묻던 수업.<br>Notrix는 강의 자료 한 장 위에서 다 해요.</p>
     <div class="cta">
-      <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSdGS65AqrO1bzIP7G3z0LZImt3jTiNz00R73fTh0tbR4eeIiA/viewform" target="_blank" rel="noopener">베타 신청하기</a>
+      <a class="btn btn-primary" href="https://testflight.apple.com/join/JvUp5sWQ" target="_blank" rel="noopener">베타 바로 써보기</a>
     </div>
   </div>
 </header>
@@ -443,14 +447,14 @@ html:not(.js) .morph .said { display: none; } html:not(.js) .morph .sym { opacit
         <button class="t-ask" role="tab" aria-selected="false">질문<i></i></button>
       </div>
       <div class="player-screen">
-        <video class="on" src="assets/listen.mp4" poster="assets/listen-poster.webp" width="1200" height="900" muted playsinline preload="none" aria-label="녹음 정리 줄의 시각을 누르자 재생 막대가 나타나 그 대목부터 재생되는 화면"></video>
-        <video src="assets/write.mp4" poster="assets/write-poster.webp" width="1200" height="900" muted playsinline preload="none" aria-label="AI 답 아래 필기 추가를 누르자 치환적분 예제에 상자, 화살표, 손글씨 메모와 풀이 순서 그림이 적히는 화면"></video>
-        <video src="assets/ask.mp4" poster="assets/ask-poster.webp" width="1200" height="900" muted playsinline preload="none" aria-label="예제 수식을 올가미로 둘러 AI에게 보내자 왼쪽 AI 창에 풀이 설명이 나오는 화면"></video>
+        <video class="on" src="assets/listen.mp4" data-m="assets/listen-m.mp4" poster="assets/listen-poster.webp" width="1200" height="900" muted playsinline preload="none" aria-label="녹음 정리 줄의 시각을 누르자 재생 막대가 나타나 그 대목부터 재생되는 화면"></video>
+        <video src="assets/write.mp4" data-m="assets/write-m.mp4" poster="assets/write-poster.webp" width="1200" height="900" muted playsinline preload="none" aria-label="AI 답 아래 필기 추가를 누르자 치환적분 예제에 상자, 화살표, 손글씨 메모와 풀이 순서 그림이 적히는 화면"></video>
+        <video src="assets/ask.mp4" data-m="assets/ask-m.mp4" poster="assets/ask-poster.webp" width="1200" height="900" muted playsinline preload="none" aria-label="학생이 손으로 쓴 정적분 풀이에서 내 필기 검토를 누르자, AI가 풀이에 상자를 치고 적분 구간을 0부터 4로 바꿔야 한다고 손글씨로 적는 화면"></video>
       </div>
       <div class="player-caps">
         <p class="on">녹음하면 슬라이드마다 교수님 말씀이 정리돼요. 시각을 누르면 그 대목부터 다시 들려줘요.</p>
         <p>AI 답 아래 '필기 추가'를 누르면 자료 빈자리에 손글씨로 적어요.</p>
-        <p>헷갈리는 수식을 올가미로 둘러 보내면 왼쪽에 풀이가 바로 와요.</p>
+        <p>'내 필기 검토'를 누르면 AI가 내 풀이를 보고 틀린 곳을 자료 위에 바로 짚어 줘요.</p>
       </div>
     </div>
   </div>
@@ -555,7 +559,7 @@ html:not(.js) .morph .said { display: none; } html:not(.js) .morph .sym { opacit
       <details><summary>어떤 기기에서 쓰나요?</summary><p>지금은 iPad 전용이에요(iPadOS 17 이상). Apple Pencil이 있으면 가장 편하지만 손가락으로도 쓸 수 있어요.</p></details>
       <details><summary>AI를 따로 가입해야 하나요?</summary><p>아니요. 앱에 기본 AI가 들어 있어서 바로 쓸 수 있어요(베타는 하루 사용 횟수 제한이 있어요). Gemini·Claude·OpenAI API 키가 있다면 설정에서 연결해서 쓸 수도 있어요.</p></details>
       <details><summary>굿노트에서 쓰던 필기도 가져와지나요?</summary><p>굿노트에서 PDF로 내보내면 필기가 담긴 채로 가져와져요. 가져온 필기는 쪽 그림의 일부가 되고, 그 위에 Notrix에서 새로 이어 쓸 수 있어요.</p></details>
-      <details><summary>베타는 어떻게 참여하나요?</summary><p>아래 신청서를 남겨 주시면 TestFlight 초대 메일을 보내 드려요.</p></details>
+      <details><summary>베타는 어떻게 참여하나요?</summary><p>iPad에서 App Store의 TestFlight 앱을 설치한 뒤, '베타 바로 써보기' 버튼을 누르면 바로 설치돼요. 신청이나 초대 메일을 기다릴 필요 없어요. 써 보신 의견은 <a href="https://docs.google.com/forms/d/e/1FAIpQLSdGS65AqrO1bzIP7G3z0LZImt3jTiNz00R73fTh0tbR4eeIiA/viewform" target="_blank" rel="noopener">설문</a>으로 남겨 주시면 큰 도움이 돼요.</p></details>
     </div>
   </div>
 </section>
@@ -564,8 +568,8 @@ html:not(.js) .morph .said { display: none; } html:not(.js) .morph .sym { opacit
   <div class="wrap">
     <div class="final-box reveal">
       <h2>다음 수업은 받아 적지 말고,<br>들으세요</h2>
-      <p>베타 테스터가 되면 가장 먼저 써 보고, 기능 방향도 같이 정해요.</p>
-      <a class="btn btn-white" href="https://docs.google.com/forms/d/e/1FAIpQLSdGS65AqrO1bzIP7G3z0LZImt3jTiNz00R73fTh0tbR4eeIiA/viewform" target="_blank" rel="noopener">베타 신청하기</a>
+      <p>지금 TestFlight로 바로 설치하고, 기능 방향도 같이 정해요.</p>
+      <a class="btn btn-white" href="https://testflight.apple.com/join/JvUp5sWQ" target="_blank" rel="noopener">베타 바로 써보기</a>
     </div>
   </div>
 </section>
@@ -583,6 +587,9 @@ html:not(.js) .morph .said { display: none; } html:not(.js) .morph .sym { opacit
 <script>
 (function () {
   var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // 휴대폰에서는 글씨가 크게 보이도록 더 좁게 자른 정사각형 영상을 써요.
+  var phone = window.matchMedia && window.matchMedia('(max-width: 720px)').matches;
+  if (phone) document.querySelectorAll('video[data-m]').forEach(function (v) { v.src = v.getAttribute('data-m'); });
   var NAV = 64;
   var hasIO = 'IntersectionObserver' in window;
 
@@ -633,8 +640,19 @@ html:not(.js) .morph .said { display: none; } html:not(.js) .morph .sym { opacit
       r.style.width = (h[2] - h[0]) + '%'; r.style.height = (h[3] - h[1]) + '%';
       r.style.opacity = (st.full || h[2] - h[0] < 0.5) ? 0 : 1;
     });
-    zoom.style.transformOrigin = st.origin || '50% 50%';
-    zoom.style.transform = st.full ? 'scale(1)' : 'scale(' + st.scale + ')';
+    var origin = st.origin || '50% 50%', scale = st.scale || 1;
+    // 좁은 화면에서는 밝힌 곳(첫 구멍)을 화면 폭에 맞게 크게 당겨 와요.
+    if (!st.full && window.innerWidth <= 880) {
+      var h0 = holes[0], w = h0[2] - h0[0];
+      scale = Math.min(2.6, 94 / w);
+      var cx = (h0[0] + h0[2]) / 2;
+      var cy = h0[1] + Math.min(h0[3] - h0[1], 100 / scale) / 2;
+      var ox = (50 - scale * cx) / (1 - scale), oy = (50 - scale * cy) / (1 - scale);
+      ox = Math.max(0, Math.min(100, ox)); oy = Math.max(0, Math.min(100, oy));
+      origin = ox.toFixed(1) + '% ' + oy.toFixed(1) + '%';
+    }
+    zoom.style.transformOrigin = origin;
+    zoom.style.transform = st.full ? 'scale(1)' : 'scale(' + scale + ')';
     dev.classList.toggle('focus', !st.full);
     dev.classList.toggle('splashing', !!st.splash);
     caps.forEach(function (c, k) { c.classList.toggle('on', k === i); });
