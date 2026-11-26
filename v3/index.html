@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Notrix — 녹음, 필기, 질문. 자료 한 장 위에서.</title>
-<meta name="description" content="공대생을 위한 AI 노트 Notrix. 교수님 말씀은 슬라이드마다 정리되고, AI가 자료 위에 손필기까지 해 주고, 모르는 곳은 그 자리에서 물어봐요.">
-<meta property="og:title" content="Notrix — 녹음, 필기, 질문. 자료 한 장 위에서.">
-<meta property="og:description" content="공대생을 위한 AI 노트. 지금 iPad 베타를 바로 써 볼 수 있어요.">
+<title>Notrix — 강의자료 위에 그려 가며 설명해 주는 AI 노트</title>
+<meta name="description" content="AI가 강의자료 위에 직접 그려 가며 설명해 주는 노트, Notrix. 모르는 곳을 물어보면 마스코트 잉키가 레이저로 짚고 손글씨로 적으며 차근차근 알려 줘요.">
+<meta property="og:title" content="Notrix — 강의자료 위에 그려 가며 설명해 주는 AI 노트">
+<meta property="og:description" content="내가 그려 가며 설명해 줄게. 잘 들어. 지금 베타 테스터 모집 중 (iPad · Mac · iPhone).">
 <meta property="og:image" content="https://notrix-app.github.io/assets/hero.webp">
 <meta name="theme-color" content="#ffffff">
 <link rel="icon" href="../assets/icon.png">
@@ -90,10 +90,17 @@ h1 { margin: 22px 0 18px; font-size: clamp(36px, 4.4vw, 64px); line-height: 1.16
 .ink { position: absolute; font-family: "Nanum Pen Script", cursive; color: #7a4ce0; font-size: clamp(18px, 2.1vw, 30px); line-height: 1; white-space: nowrap; pointer-events: none;
   clip-path: inset(0 100% 0 0); }
 .ink.on { clip-path: inset(0 0 0 0); transition: clip-path 1.6s steps(18, end); }
+.shot-wrap.pt { margin-right: 0; display: flex; justify-content: center; }
+.shot-wrap.pt > div { width: min(100%, 380px); }
+.shot.pt { width: 100%; }
+.js .shot.pt { transform: none !important; }
+.shot.pt .scr video { width: 100%; height: auto; aspect-ratio: 9 / 16; object-fit: cover; background: #fbfaf6; }
+.inky-note { margin-top: 14px; text-align: center; font-size: 13px; color: var(--dim); }
 @media (max-width: 980px) {
   .hero { padding-top: 56px; }
   .hero-grid { grid-template-columns: 1fr; }
   .shot-wrap { margin: 20px -24px 0 0; }
+  .shot-wrap.pt { margin: 28px 0 0; }
   .shot { padding: 8px; border-radius: 20px; }
   .scr { border-radius: 13px; }
 }
@@ -264,7 +271,7 @@ footer .links { display: flex; gap: 20px; opacity: .7; }
     <a href="#" aria-label="Notrix 처음으로"><img class="logo" src="../assets/notrix-logo.png" alt="Notrix" width="80" height="30"></a>
     <div class="nav-links">
       <a href="#features">기능</a>
-      <a href="#flow">수업 흐름</a>
+      <a href="#flow">공부 흐름</a>
       <a href="#faq">자주 묻는 질문</a>
       <a class="btn btn-primary btn-sm" href="https://testflight.apple.com/join/JvUp5sWQ" target="_blank" rel="noopener">바로 써보기</a>
     </div>
@@ -274,25 +281,21 @@ footer .links { display: flex; gap: 20px; opacity: .7; }
 <header class="hero">
   <div class="wrap hero-grid">
     <div>
-      <a class="pill rise" href="https://testflight.apple.com/join/JvUp5sWQ" target="_blank" rel="noopener"><b>BETA</b>iPad 베타 오픈 <span class="arrow">→</span></a>
-      <h1 class="rise" style="--d:.08s"><span class="nw">녹음, 필기, 질문.</span><br><span class="grad nw">자료 한 장 위에서.</span></h1>
-      <p class="sub rise" style="--d:.16s"><strong>공대생을 위한 AI 노트, Notrix.</strong> 교수님 말씀은 슬라이드마다 정리되고, AI가 자료 위에 손필기까지 해 줘요. 모르는 곳은 그 자리에서 물어보세요.</p>
+      <a class="pill rise" href="https://testflight.apple.com/join/JvUp5sWQ" target="_blank" rel="noopener"><b>BETA</b>베타 테스터 모집 중 (iPad · Mac · iPhone) <span class="arrow">→</span></a>
+      <h1 class="rise" style="--d:.08s"><span class="nw">모르는 곳은</span><br><span class="grad nw">그려 가며 설명해 줄게.</span></h1>
+      <p class="sub rise" style="--d:.16s"><strong>AI가 강의자료 위에 직접 그려 가며 설명해 주는 노트, Notrix.</strong> 막힌 곳을 물어보면 마스코트 잉키가 레이저로 짚고, 손글씨로 적고, 말로 차근차근 알려 줘요.</p>
       <div class="cta rise" style="--d:.24s">
         <a class="btn btn-primary" href="https://testflight.apple.com/join/JvUp5sWQ" target="_blank" rel="noopener">바로 써보기 <span class="arrow">→</span></a>
         <a class="btn btn-ghost" href="#features">기능 둘러보기</a>
       </div>
-      <div class="meta rise" style="--d:.32s"><span>베타 기간 무료</span><span>iPad · iPadOS 17 이상</span><span>AI 따로 가입 필요 없음</span></div>
+      <div class="meta rise" style="--d:.32s"><span>베타 기간 무료</span><span>iPad · Mac · iPhone</span><span>AI 따로 가입 필요 없음</span></div>
     </div>
-    <div class="shot-wrap rise" style="--d:.3s">
-      <div class="shot splashing">
-        <div class="scr">
-          <img src="../assets/hero.webp" alt="왼쪽 AI 창의 단계별 풀이, 가운데 슬라이드 위 AI 손글씨 필기, 위쪽 녹음 재생 막대와 오른쪽 쪽별 녹음 정리가 함께 보이는 Notrix 화면" width="1600" height="1112" fetchpriority="high">
-          <div class="splash" aria-hidden="true">
-            <img class="splash-word" src="../assets/notrix-logo.png" alt="" width="560" height="211">
-            <p>공대생을 위한 AI 노트</p>
-            <span class="splash-hint">스크롤해서 둘러보기</span>
-          </div>
+    <div class="shot-wrap pt rise" style="--d:.3s">
+      <div>
+        <div class="shot pt">
+          <div class="scr"><video src="../assets/inky-explain.mp4" poster="../assets/inky-explain-poster.webp" autoplay muted loop playsinline aria-label="마스코트 잉키가 미적분 슬라이드 위에 동그라미와 손글씨, 화살표를 그리며 정적분을 설명하는 영상"></video></div>
         </div>
+        <p class="inky-note">잉키가 설명하는 모습을 보여 주는 연출 영상이에요</p>
       </div>
     </div>
   </div>
@@ -308,30 +311,30 @@ footer .links { display: flex; gap: 20px; opacity: .7; }
 
 <section class="statement">
   <div class="wrap">
-    <p class="words">녹음 앱을 켜고, 필기 앱에 받아 적고, 막히면 캡처해서 챗봇에 묻던 수업. 이제 <mark>자료</mark> <mark>한</mark> <mark>장이면</mark> <mark>충분해요.</mark></p>
+    <p class="words">막혀서 AI에게 물어봐도, 글로 길게 늘어놓은 답은 읽다가 더 헷갈려요. 그래서 Notrix는 <mark>자료</mark> <mark>위에</mark> <mark>직접</mark> <mark>그려서</mark> <mark>설명해요.</mark></p>
   </div>
 </section>
 
 <section class="bento-sec" id="features">
   <div class="wrap">
     <div class="head rv">
-      <span class="label">한 장 위에서 일어나는 일</span>
-      <h2>듣고, 쓰고, 묻는 게<br>전부 같은 화면에서</h2>
-      <p>앱을 오가며 흐름이 끊기지 않아요. 보던 슬라이드 위에서 바로 정리되고, 적히고, 답이 와요.</p>
+      <span class="label">그려 가며 설명하는 노트</span>
+      <h2>짚고, 긋고, 적으면서<br>차근차근</h2>
+      <p>선생님이 판서하듯, 보던 슬라이드 위에서 바로 설명해요. 설명이 끝나면 필기가 그대로 남아요.</p>
     </div>
     <div class="bento">
       <article class="tile b-rec rv">
         <div>
-          <span class="tag t1">녹음</span>
-          <h3>교수님 말씀이<br>슬라이드마다 정리돼요</h3>
-          <p>녹음만 켜 두면 슬라이드별로 설명이 정리되고, 중요한 대목은 AI가 자료 위에 손필기까지 해 줘요.</p>
+          <span class="tag t1">말로 설명</span>
+          <h3>잉키가 그려 가며<br>설명해 줘요</h3>
+          <p>"내가 그려 가며 설명해 줄게. 잘 들어." 단계마다 말과 자막에 맞춰, 지금 이야기하는 곳을 자료 위에서 바로 짚어요.</p>
           <ul class="points">
-            <li>정리된 줄의 시각을 누르면 그 대목부터 다시 재생</li>
-            <li>"엑스 제곱 적분"처럼 말로 읽은 식도 ∫x² 기호로</li>
-            <li>설명이 모자란 곳은 AI 보완 줄을 따로</li>
+            <li>레이저로 짚고, 동그라미·화살표·스포트라이트로 시선을 모아요</li>
+            <li>남길 곳은 형광펜·밑줄·손글씨 메모로 필기해요</li>
+            <li>AI 창에 적은 질문에 맞춰 그 부분만 설명해요</li>
           </ul>
         </div>
-        <div class="screen"><video src="../assets/listen.mp4" poster="../assets/listen-poster.webp" muted loop playsinline preload="none" aria-label="녹음 정리 줄의 시각을 누르자 그 대목부터 재생되는 화면"></video></div>
+        <div class="screen"><video src="../assets/inky-explain-wide.mp4" poster="../assets/inky-explain-wide-poster.webp" muted loop playsinline preload="none" aria-label="잉키가 말풍선으로 설명하며 슬라이드 위에 동그라미, 손글씨, 화살표를 그리는 연출 영상"></video></div>
       </article>
       <article class="tile b-math rv" style="--d:.08s">
         <span class="tag t0">수식</span>
@@ -348,16 +351,16 @@ footer .links { display: flex; gap: 20px; opacity: .7; }
         <h3>다시 볼 쪽이 색으로</h3>
       </article>
       <article class="tile b-ink rv">
-        <span class="tag t2">필기</span>
-        <h3>AI가 자료 위에 직접 필기해요</h3>
-        <p>채팅창에 늘어놓는 대신, 빈자리에 손글씨로. 지수·아래첨자까지 수식 그대로 적고, 내 필기처럼 옮기고 지울 수 있어요.</p>
-        <div class="screen"><video src="../assets/write.mp4" poster="../assets/write-poster.webp" muted loop playsinline preload="none" aria-label="필기 추가를 누르자 예제에 상자, 화살표, 손글씨 메모가 적히는 화면"></video></div>
+        <span class="tag t2">질문</span>
+        <h3>모르는 곳은 둘러서 바로</h3>
+        <p>헷갈리는 곳을 올가미로 두르거나 AI 창에 물어보면, 보던 쪽과 내 풀이를 보고 답해요. 답은 '필기 추가'로 자료 위에 손글씨로 남아요.</p>
+        <div class="screen"><video src="../assets/ask.mp4" poster="../assets/ask-poster.webp" muted loop playsinline preload="none" aria-label="내 풀이를 AI에게 보내자 풀이를 검토해 손글씨로 적어 주는 화면"></video></div>
       </article>
       <article class="tile b-ask rv" style="--d:.1s">
-        <span class="tag t3">질문</span>
-        <h3>모르는 곳은 AI에게 바로</h3>
-        <p>AI 탭을 열거나 헷갈리는 곳을 올가미로 두르면, 보던 쪽과 내 풀이를 보고 단계별로 답해요. 답은 '필기 추가'로 자료 위에.</p>
-        <div class="screen"><video src="../assets/ask.mp4" poster="../assets/ask-poster.webp" muted loop playsinline preload="none" aria-label="내 풀이를 AI에게 보내자 풀이를 검토해 손글씨로 적어 주는 화면"></video></div>
+        <span class="tag t3">녹음</span>
+        <h3>교수님 말씀도 자료 옆에</h3>
+        <p>강의를 녹음하면 슬라이드마다 설명이 정리돼요. 정리된 줄의 시각을 누르면 그 대목부터 다시 들을 수 있어요.</p>
+        <div class="screen"><video src="../assets/listen.mp4" poster="../assets/listen-poster.webp" muted loop playsinline preload="none" aria-label="녹음 정리 줄의 시각을 누르자 그 대목부터 재생되는 화면"></video></div>
       </article>
       <article class="tile b-pdf rv">
         <div>
@@ -370,10 +373,10 @@ footer .links { display: flex; gap: 20px; opacity: .7; }
       <article class="tile b-pad rv" style="--d:.08s">
         <div>
           <span class="tag t0">기기</span>
-          <h3>iPad와 Apple Pencil로</h3>
-          <p>손가락으로도 쓸 수 있어요. AI는 기본으로 들어 있어 따로 가입할 필요 없어요.</p>
+          <h3>iPad, Mac, iPhone에서</h3>
+          <p>iPad는 Apple Pencil로, Mac은 트랙패드로, iPhone은 언제 어디서나. AI는 기본으로 들어 있어 따로 가입할 필요 없어요.</p>
         </div>
-        <div class="spec"><b class="grad">iPadOS 17+</b><span>베타 기간 무료</span></div>
+        <div class="spec"><b class="grad">iPad · Mac · iPhone</b><span>베타 기간 무료</span></div>
       </article>
     </div>
   </div>
@@ -382,15 +385,15 @@ footer .links { display: flex; gap: 20px; opacity: .7; }
 <section class="flow-sec" id="flow">
   <div class="wrap">
     <div class="head rv">
-      <span class="label">수업 한 번의 흐름</span>
-      <h2>수업 전부터 시험 날까지</h2>
+      <span class="label">공부 한 번의 흐름</span>
+      <h2>막힌 곳에서 이해까지</h2>
     </div>
     <div class="timeline">
       <i class="bar" aria-hidden="true"></i>
-      <div class="stage"><span class="n">1</span><small>수업 전</small><h3>자료 가져오기</h3><p>강의 PDF나 굿노트에서 내보낸 노트를 여러 개 한 번에 끌어다 놓아요.</p></div>
-      <div class="stage"><span class="n">2</span><small>수업 중</small><h3>녹음 켜고 듣기만</h3><p>받아 적느라 놓치지 말고 설명에 집중하세요. 정리는 쪽마다 따라붙어요.</p></div>
-      <div class="stage"><span class="n">3</span><small>수업 후</small><h3>정리 보고, 바로 묻기</h3><p>AI 손필기로 핵심을 다시 보고, 막히는 곳은 둘러서 물어봐요.</p></div>
-      <div class="stage"><span class="n">4</span><small>시험 기간</small><h3>색으로 복습할 쪽 찾기</h3><p>틀린 곳이 짚였거나 질문이 많았던 쪽만 골라서 다시 봐요.</p></div>
+      <div class="stage"><span class="n">1</span><small>자료</small><h3>강의 PDF 가져오기</h3><p>강의 PDF나 굿노트에서 내보낸 노트를 여러 개 한 번에 끌어다 놓아요.</p></div>
+      <div class="stage"><span class="n">2</span><small>질문</small><h3>막힌 곳 물어보기</h3><p>모르는 식을 올가미로 두르거나, AI 창에 "이거 왜 이래?"라고 적어요.</p></div>
+      <div class="stage"><span class="n">3</span><small>설명</small><h3>잉키가 그려 가며 설명</h3><p>레이저로 짚고 손글씨로 적으며, 말로 한 단계씩 알려 줘요.</p></div>
+      <div class="stage"><span class="n">4</span><small>복습</small><h3>필기로 남겨 다시 보기</h3><p>설명하며 적은 필기는 자료에 그대로 남아요. 시험 전에 그 쪽만 다시 보면 돼요.</p></div>
     </div>
   </div>
 </section>
@@ -401,12 +404,13 @@ footer .links { display: flex; gap: 20px; opacity: .7; }
     <div class="faq rv">
       <div>
         <details><summary>돈이 드나요?</summary><p>베타 기간에는 무료예요. 정식 출시 뒤에도 혼자 쓰는 필기 기능은 무료로 둘 계획이에요.</p></details>
-        <details><summary>어떤 기기에서 쓰나요?</summary><p>지금은 iPad 전용이에요(iPadOS 17 이상). Apple Pencil이 있으면 가장 편하지만 손가락으로도 쓸 수 있어요.</p></details>
-        <details><summary>AI를 따로 가입해야 하나요?</summary><p>아니요. 앱에 기본 AI가 들어 있어서 바로 쓸 수 있어요(베타는 하루 사용 횟수 제한이 있어요). Gemini·Claude·OpenAI API 키가 있다면 설정에서 연결해서 쓸 수도 있어요.</p></details>
+        <details><summary>어떤 기기에서 쓰나요?</summary><p>iPad·iPhone(iOS 17 이상)과 Apple 실리콘 Mac에서 써요. 필기는 iPad와 Apple Pencil이 가장 편하고, Mac은 트랙패드나 마우스로 써요.</p></details>
+        <details><summary>AI를 따로 가입해야 하나요?</summary><p>아니요. 앱에 기본 AI가 들어 있어서 바로 쓸 수 있어요(베타는 하루 사용량 제한이 있어요). Gemini·Claude·OpenAI API 키가 있다면 설정에서 연결해서 쓸 수도 있어요.</p></details>
       </div>
       <div>
+        <details><summary>잉키가 누구예요?</summary><p>Notrix의 마스코트예요. 만년필 촉에서 떨어진 작은 잉크 방울인데, 공대 수업은 옆에서 다 들었대요. 조금 시큰둥하지만 설명은 끝까지 해 줘요.</p></details>
         <details><summary>굿노트에서 쓰던 필기도 가져와지나요?</summary><p>굿노트에서 PDF로 내보내면 필기가 담긴 채로 가져와져요. 가져온 필기는 쪽 그림의 일부가 되고, 그 위에 Notrix에서 새로 이어 쓸 수 있어요.</p></details>
-        <details><summary>베타는 어떻게 참여하나요?</summary><p>iPad에서 App Store의 TestFlight 앱을 설치한 뒤, '바로 써보기' 버튼을 누르면 바로 설치돼요. 신청이나 초대 메일을 기다릴 필요 없어요. 써 보신 의견은 <a href="https://docs.google.com/forms/d/e/1FAIpQLSdGS65AqrO1bzIP7G3z0LZImt3jTiNz00R73fTh0tbR4eeIiA/viewform" target="_blank" rel="noopener">설문</a>으로 남겨 주시면 큰 도움이 돼요.</p></details>
+        <details><summary>베타는 어떻게 참여하나요?</summary><p>iPad·Mac·iPhone에서 App Store의 TestFlight 앱을 설치한 뒤, '바로 써보기' 버튼을 누르면 바로 설치돼요. 신청이나 초대 메일을 기다릴 필요 없어요. 써 보신 의견은 <a href="https://docs.google.com/forms/d/e/1FAIpQLSdGS65AqrO1bzIP7G3z0LZImt3jTiNz00R73fTh0tbR4eeIiA/viewform" target="_blank" rel="noopener">설문</a>으로 남겨 주시면 큰 도움이 돼요.</p></details>
       </div>
     </div>
   </div>
@@ -415,8 +419,8 @@ footer .links { display: flex; gap: 20px; opacity: .7; }
 <section class="final">
   <div class="wrap">
     <div class="final-box rv">
-      <h2>다음 수업은<br><span class="grad">듣기만 하세요.</span></h2>
-      <p>지금 TestFlight로 바로 설치하고, 기능 방향도 같이 정해요.</p>
+      <h2>이제 나랑<br><span class="grad">공부하자.</span></h2>
+      <p>베타 테스터 모집 중 (iPad · Mac · iPhone). 지금 TestFlight로 바로 설치하고, 기능 방향도 같이 정해요.</p>
       <a class="btn btn-white" href="https://testflight.apple.com/join/JvUp5sWQ" target="_blank" rel="noopener">바로 써보기 <span class="arrow">→</span></a>
     </div>
   </div>
