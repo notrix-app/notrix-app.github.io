@@ -62,7 +62,7 @@ nav .wrap { height: 64px; display: flex; align-items: center; justify-content: s
   background: radial-gradient(520px 340px at 76% 38%, rgba(148,97,250,.13), transparent 70%), radial-gradient(420px 300px at 92% 70%, rgba(250,115,158,.10), transparent 70%), radial-gradient(460px 300px at 12% 16%, rgba(77,133,255,.09), transparent 70%); }
 .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1.05fr 1fr; gap: 40px; align-items: center; }
 .pill { display: inline-flex; align-items: center; gap: 10px; padding: 6px 14px 6px 6px; border-radius: 999px; font-size: 14px; font-weight: 600; color: var(--muted); background: var(--soft); border: 1px solid var(--line); }
-.pill b { padding: 3px 10px; border-radius: 999px; font-size: 12px; color: #fff; background: linear-gradient(100deg, var(--ai2), var(--ai3)); }
+.pill b { white-space: nowrap; padding: 3px 10px; border-radius: 999px; font-size: 12px; color: #fff; background: linear-gradient(100deg, var(--ai2), var(--ai3)); }
 .pill:hover { color: var(--text); }
 h1 { margin: 22px 0 18px; font-size: clamp(36px, 4.4vw, 64px); line-height: 1.16; letter-spacing: -0.03em; font-weight: 800; }
 .nw { white-space: nowrap; }
@@ -281,7 +281,7 @@ footer .links { display: flex; gap: 20px; opacity: .7; }
 <header class="hero">
   <div class="wrap hero-grid">
     <div>
-      <a class="pill rise" href="https://testflight.apple.com/join/JvUp5sWQ" target="_blank" rel="noopener"><b>BETA</b>베타 테스터 모집 중 (iPad · Mac · iPhone) <span class="arrow">→</span></a>
+      <a class="pill rise" href="https://testflight.apple.com/join/JvUp5sWQ" target="_blank" rel="noopener"><b>BETA</b>베타 테스터 모집 중 <span class="arrow">→</span></a>
       <h1 class="rise" style="--d:.08s"><span class="nw">모르는 곳은</span><br><span class="grad nw">그려 가며 설명해 줄게.</span></h1>
       <p class="sub rise" style="--d:.16s"><strong>AI가 강의자료 위에 직접 그려 가며 설명해 주는 노트, Notrix.</strong> 막힌 곳을 물어보면 마스코트 잉키가 레이저로 짚고, 손글씨로 적고, 말로 차근차근 알려 줘요.</p>
       <div class="cta rise" style="--d:.24s">
